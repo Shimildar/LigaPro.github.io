@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/source/css/style.css">
+    <title>LigaProTimetable</title>
+</head>
+<body class="body">
+    <header class="header">
+        <h1 class="header__title">Создание расписания для LigaPro</h1>
+    </header>
+    <section class="input">
+        <h2 class="input__title">Введите данные</h2>
+        <form class="input__info">
+            <fieldset class="input__date">
+                <legend>Дата</legend>
+                <input type="date" name="date" id="date" value>
+                <!-- <label for="month">Месяц</label>
+                <input class="input__month" type="month" name="month" id="month" required> -->
+            </fieldset>
+            <fieldset class="input__minsk">
+                <legend>Волейбол Минск</legend>
+                <fieldset class="input__minsk-challenge">
+                    <legend>Турниры Челлендж</legend>
+                    <label for="challenge-1">1</label>
+                    <input class="input__minsk-challenge" type="checkbox" id="challenge-1" name="tournament-type" value="1">
+                    <label for="challenge-2">2</label>
+                    <input class="input__minsk-challenge" type="checkbox" id="challenge-2" name="tournament-type" value="2">
+                    <label for="challenge-3">3</label>
+                    <input class="input__minsk-challenge" type="checkbox" id="challenge-3" name="tournament-type" value="3">
+                    <label for="challenge-4">4</label>
+                    <input class="input__minsk-challenge" type="checkbox" id="challenge-4" name="tournament-type" value="4">
+                </fieldset>
+                <fieldset class="input__minsk-stage">
+                    <legend>Турниры Стэйдж</legend>
+                    <label for="stage-1">1</label>
+                    <input class="input__minsk-stage" type="checkbox" id="stage-1" name="tournament-type" value="1">
+                    <label for="stage-2">2</label>
+                    <input class="input__minsk-stage" type="checkbox" id="stage-2" name="tournament-type" value="2">
+                    <label for="stage-3">3</label>
+                    <input class="input__minsk-stage" type="checkbox" id="stage-3" name="tournament-type" value="3">
+                    <label for="stage-4">4</label>
+                    <input class="input__minsk-stage" type="checkbox" id="stage-4" name="tournament-type" value="4">
+                </fieldset>
+            </fieldset>
+            <fieldset class="input__bt">
+                <legend>Большой теннис</legend>
+                <label for="bt-1">А</label>
+                <input class="input__bt-tournament" type="checkbox" id="bt-1" name="tournament-type" value="А">
+                <label for="bt-2">Б</label>
+                <input class="input__bt-tournament" type="checkbox" id="bt-2" name="tournament-type" value="Б">
+                <label for="bt-3">В</label>
+                <input class="input__bt-tournament" type="checkbox" id="bt-3" name="tournament-type" value="В">
+                <label for="bt-4">Г</label>
+                <input class="input__bt-tournament" type="checkbox" id="bt-4" name="tournament-type" value="Г">
+                <label for="bt-5">Д</label>
+                <input class="input__bt-tournament" type="checkbox" id="bt-5" name="tournament-type" value="Д">
+                <label for="bt-6">Е</label>
+                <input class="input__bt-tournament" type="checkbox" id="bt-6" name="tournament-type" value="Е">
+            </fieldset>
+            <button class="input__button" type="button">Создать расписание</button>
+        </form>
+    </section>
+    <section class="output">
+        <ul class="output__hockey"></ul>
+        <ul class="output__ping-pong"></ul>
+        <ul class="output__bt"></ul>
+        <ul class="output__volley"></ul>
+        <ul class="output__basket"></ul>
+    </section>
+    <footer></footer>
+    <script src="./node_modules/dayjs/dayjs.min.js"></script>
+    <script src="./node_modules/dayjs/locale/ru.js"></script>
+    <script>
+        dayjs.locale('ru')
+    </script>
+    <script src="/source/js/main.js" type="module"></script>
+</body>
