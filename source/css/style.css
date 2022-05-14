@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSansCondensed-Bold.woff2") format("woff2"),
+    url("../fonts/OpenSansCondensed-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("../fonts/OpenSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    background-image: linear-gradient(to bottom, #D3A5A8 16%, #F0E0E1 40%);
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+input {
+    margin-right: 30px;
+}
+
+.input__button {
+    width: 200px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.header__title {
+    text-align: center;
+}
+
+.input__title {
+    text-align: center;
+}
+
+.input__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 35%;
+    margin: 0 auto;
+}
+
+.input__date label {
+    margin-right: 10px;
+}
+
+.input__day {
+    margin-right: 20px;
+}
+
+.input__month {
+    margin-right: 20px;
+}
+
+.output {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.output li {
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.copied {
+    color: forestgreen;
+}
+
+.ready-title {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.ready-title:hover {
+    opacity: 0.6;
+}
+
+.ready-title:active {
+    opacity: 0.3;
+}
