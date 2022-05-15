@@ -71,9 +71,11 @@
         <ul class="output__basket"></ul>
     </section>
     <footer></footer>
-    <script src="https://unpkg.com/dayjs"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/locale/ru.js"></script>
+    <script>dayjs.locale('ru')</script>
     <script>
-    dayjs().format();
+        dayjs().format();
     </script>
     <script src="./source/js/main.js" type="module"></script>
 </body>
