@@ -77,7 +77,7 @@ const createHockeyTitles = (date) => {
 
     return (
     `<h2>Хоккей</h2>
-    <li><span class="ready-title">Хоккей. Открытый Чемпионат Лига Про. Магнитогорск. Утрениий турнир. ${hockeyDate}г.</span></li>
+    <li><span class="ready-title">Хоккей. Открытый Чемпионат Лига Про. Магнитогорск. Утренний турнир. ${hockeyDate}г.</span></li>
     <li><span class="ready-title">Хоккей. Открытый Чемпионат Лига Про. Магнитогорск. Вечерний турнир. ${hockeyDate}г.</span></li>`
     )
 };
