@@ -17,8 +17,6 @@
             <fieldset class="input__date">
                 <legend>Дата</legend>
                 <input type="date" name="date" id="date" value>
-                <!-- <label for="month">Месяц</label>
-                <input class="input__month" type="month" name="month" id="month" required> -->
             </fieldset>
             <fieldset class="input__minsk">
                 <legend>Волейбол Минск</legend>
@@ -65,17 +63,24 @@
     </section>
     <section class="output">
         <ul class="output__hockey"></ul>
-        <ul class="output__ping-pong"></ul>
-        <ul class="output__bt"></ul>
         <ul class="output__volley"></ul>
+        <ul class="output__bt"></ul>
+        <ul class="output__football"></ul>
+        <ul class="output__cyberball"></ul>
         <ul class="output__basket"></ul>
+        <ul class="output__ping-pong"></ul>
     </section>
     <footer></footer>
+    <!-- <script src="./node_modules/dayjs/dayjs.min.js"></script>
+    <script src="./node_modules/dayjs/locale/ru.js"></script>
+    <script>
+        dayjs.locale('ru')
+    </script> -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/locale/ru.js"></script>
     <script>dayjs.locale('ru')</script>
     <script>
-        dayjs().format();
+    dayjs().format();
     </script>
     <script src="./source/js/main.js" type="module"></script>
 </body>
