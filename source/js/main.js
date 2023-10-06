@@ -89,9 +89,9 @@ const createPingPongTitles = (date) => {
         <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 13:00</span></li>
         <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 17:00</span></li>
         <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 21:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А9. Чехия. Турнир ${pingPongDate}г. 12:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А9. Чехия. Турнир ${pingPongDate}г. 16:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А9. Чехия. Турнир ${pingPongDate}г. 20:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А9. Турнир ${pingPongDate}г. 12:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А9. Турнир ${pingPongDate}г. 16:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А9. Турнир ${pingPongDate}г. 20:00</span></li>
         <li><span class="ready-title">Настольный теннис (спорт слепых). Лига Про. Хабаровск. Турнир ${pingPongBlindDate}г.</span></li>
         `
     )
