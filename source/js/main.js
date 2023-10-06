@@ -1,5 +1,7 @@
 import {humanizeDate, humanizeDateForNigth, showAlert} from './utils.js';
 
+//Test
+
 const pageBody = document.querySelector('body');
 const outputContainer = pageBody.querySelector('.output');
 const pingPongContainer = pageBody.querySelector('.output__ping-pong');
