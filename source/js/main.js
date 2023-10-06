@@ -1,26 +1,25 @@
 import {humanizeDate, humanizeDateForNigth, showAlert} from './utils.js';
 
-//Test
-
 const pageBody = document.querySelector('body');
 const outputContainer = pageBody.querySelector('.output');
 const pingPongContainer = pageBody.querySelector('.output__ping-pong');
 const volleyContainer = pageBody.querySelector('.output__volley');
 const btkContainer = pageBody.querySelector('.output__bt');
+const footbal3x3Container = pageBody.querySelector('.output__football3x3');
 const hockeyContainer = pageBody.querySelector('.output__hockey');
 const basketContainer = pageBody.querySelector('.output__basket');
-const footballContainer = pageBody.querySelector('.output__football');
 const cyberballContainer = pageBody.querySelector('.output__cyberball');
 const timetableButton = pageBody.querySelector('.input__button');
 
 const dateFormatTypes = {
     PINGPONG: 'DD MMMM YYYY',
+    PINGPONGBLIND: 'DD.MM.YYYY',
     VOLLEY: 'DD MMMM YYYY',
     BT: 'DD.MM.YYYY',
     HOCKEY: 'DD.MM.YYYY',
     BASKET: 'DD MMMM YYYY',
-    FOOTBALL: 'DD MMMM YYYY',
-    CYBERBALL: 'DD MMMM YYYY'
+    CYBERBALL: 'DD MMMM YYYY',
+    FOOTBALL3X3: 'DD MMMM YYYY'
 }
 
 const challenge = 'Челлендж';
@@ -37,20 +36,10 @@ const createCyberballTitles = (date) => {
     )
 };
 
-const createFootballTitles = (date) => {
-    const footballDate = humanizeDate(date, dateFormatTypes.FOOTBALL);
-
-    return (
-    `<h2>Футбол</h2>
-    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Утренний турнир. ${footballDate}г.</span></li>
-    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Дневной турнир. ${footballDate}г.</span></li>
-    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Вечерний турнир. ${footballDate}г.</span></li>`
-    )
-};
-
 const createPingPongTitles = (date) => {
     const pingPongDate = humanizeDate(date, dateFormatTypes.PINGPONG);
     const pingPongNigthDate = humanizeDateForNigth(date, dateFormatTypes.PINGPONG);
+    const pingPongBlindDate = humanizeDate(date, dateFormatTypes.PINGPONGBLIND);
 
     return (
         `<h2>Настольный теннис</h2>
@@ -69,6 +58,11 @@ const createPingPongTitles = (date) => {
         <li><span class="ready-title">Настольный теннис. А6. Турнир ${pingPongDate}г. 15:45</span></li>
         <li><span class="ready-title">Настольный теннис. А6. Турнир ${pingPongDate}г. 19:45</span></li>
         <li><span class="ready-title">Настольный теннис. А6. Турнир ${pingPongDate}г. 23:45</span></li>
+        <li><span class="ready-title">Настольный теннис. А6 AI. Турнир ${pingPongDate}г. 07:45</span></li>
+        <li><span class="ready-title">Настольный теннис. А6 AI. Турнир ${pingPongDate}г. 11:45</span></li>
+        <li><span class="ready-title">Настольный теннис. А6 AI. Турнир ${pingPongDate}г. 15:45</span></li>
+        <li><span class="ready-title">Настольный теннис. А6 AI. Турнир ${pingPongDate}г. 19:45</span></li>
+        <li><span class="ready-title">Настольный теннис. А6 AI. Турнир ${pingPongDate}г. 23:45</span></li>
         <li><span class="ready-title">Настольный теннис. А3. Турнир ${pingPongDate}г. 08:00</span></li>
         <li><span class="ready-title">Настольный теннис. А3. Турнир ${pingPongDate}г. 12:00</span></li>
         <li><span class="ready-title">Настольный теннис. А3. Турнир ${pingPongDate}г. 16:00</span></li>
@@ -77,24 +71,29 @@ const createPingPongTitles = (date) => {
         <li><span class="ready-title">Настольный теннис. А15. Турнир ${pingPongDate}г. 12:00</span></li>
         <li><span class="ready-title">Настольный теннис. А15. Турнир ${pingPongDate}г. 16:00</span></li>
         <li><span class="ready-title">Настольный теннис. А15. Турнир ${pingPongDate}г. 20:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 10:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 14:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 18:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 22:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 10:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 14:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 18:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 22:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 10:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 14:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 18:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 22:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 10:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 14:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 18:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 22:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongNigthDate}г. 02:00</span></li>
-        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongNigthDate}г. 02:00</span></li>`
+        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 09:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 13:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 17:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongDate}г. 21:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А12. Чехия. Турнир ${pingPongNigthDate}г. 01:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 09:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 13:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 17:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongDate}г. 21:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А14. Чехия. Турнир ${pingPongNigthDate}г. 02:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 09:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 13:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 17:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А16. Чехия. Турнир ${pingPongDate}г. 21:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 09:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 13:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 17:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А18. Чехия. Турнир ${pingPongDate}г. 21:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А9. Чехия. Турнир ${pingPongDate}г. 12:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А9. Чехия. Турнир ${pingPongDate}г. 16:00</span></li>
+        <li><span class="ready-title">Настольный теннис. А9. Чехия. Турнир ${pingPongDate}г. 20:00</span></li>
+        <li><span class="ready-title">Настольный теннис (спорт слепых). Лига Про. Хабаровск. Турнир ${pingPongBlindDate}г.</span></li>
+        `
     )
 };
 
@@ -113,17 +112,12 @@ const createBasketTitles = (date) => {
 
     return (
     `<h2>Баскетбол 3х3</h2>
+    <li><span class="ready-title">Баскетбол 3х3. Состязание бросков. Турнир А. ${basketDate}г.</span></li>
+    <li><span class="ready-title">Баскетбол 3х3. Состязание бросков. Турнир Б. ${basketDate}г.</span></li>
     <li><span class="ready-title">Баскетбол 3х3. Турнир А. ${basketDate}г.</span></li>
     <li><span class="ready-title">Баскетбол 3х3. Турнир Б. ${basketDate}г.</span></li>`
     )
 };
-
-const getValuesCollection = (inputs) => {
-    const inputValues = [];
-    inputs.forEach((item) => inputValues.push(item.value));
-
-    return inputValues;
-}
 
 const createVolleyTverTitles = (date) => {
     const volleyDate = humanizeDate(date, dateFormatTypes.VOLLEY);
@@ -132,6 +126,19 @@ const createVolleyTverTitles = (date) => {
     `<h2>Волейбол Тверь</h2>
     <li><span class="ready-title">Волейбол.  Лига Про. Тверь. Турнир А. ${volleyDate}г.</span></li>
     <li><span class="ready-title">Волейбол.  Лига Про. Тверь. Турнир Б. ${volleyDate}г.</span></li>`
+    )
+};
+
+const createFootbal3x3Titles = (date) => {
+    const footbal3x3Date = humanizeDate(date, dateFormatTypes.FOOTBALL3X3);
+
+    return (
+    `<h2>Футбол 3х3</h2>
+    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Дивизион А. Утренний турнир ${footbal3x3Date}г.</span></li>
+    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Дивизион А. Дневной турнир ${footbal3x3Date}г.</span></li>
+    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Дивизион А. Вечерний турнир ${footbal3x3Date}г.</span></li>
+    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Дивизион Б. Утренний турнир ${footbal3x3Date}г.</span></li>
+    <li><span class="ready-title">Футбол 3х3. Открытый турнир Лига Про по микрофутзалу. Дивизион Б. Дневной турнир ${footbal3x3Date}г.</span></li>`
     )
 };
 
@@ -145,6 +152,12 @@ const createBtTitles = (values, date) => '<h2>Большой теннис</h2>' 
 `<li><span class="ready-title">Теннис. Открытый турнир Лига Про. Балашиха. Турнир ${item}. ${humanizeDate(date, dateFormatTypes.BT)}г.</span><li>`)).
 join('');
 
+const getValuesCollection = (inputs) => {
+    const inputValues = [];
+    inputs.forEach((item) => inputValues.push(item.value));
+
+    return inputValues;
+}
 
 const renderTitles = (container, titles) => container.insertAdjacentHTML('beforeend', titles);
 
@@ -182,8 +195,8 @@ const createTimeTable = () => {
 
     renderTitles(hockeyContainer, createHockeyTitles(date.value));
     renderTitles(pingPongContainer, createPingPongTitles(date.value));
-    renderTitles(footballContainer, createFootballTitles(date.value));
     renderTitles(cyberballContainer, createCyberballTitles(date.value));
+    renderTitles(footbal3x3Container, createFootbal3x3Titles(date.value));
 
     if (checkedChallenge.length > 0) {
         renderTitles(volleyContainer, challengeTitles);
